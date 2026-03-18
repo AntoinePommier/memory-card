@@ -6,7 +6,12 @@
 body {
 	margin: 0;
 	font-family: system-ui, sans-serif;
-	background: #0f172a;
+	background-color: #0a1424;
+	background-image: radial-gradient(
+		rgba(255, 255, 255, 0.05) 1px,
+		transparent 1px
+	);
+	background-size: 20px 20px;
 	color: white;
 }
 

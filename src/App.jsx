@@ -1,6 +1,25 @@
 import { useEffect, useState } from "react";
+import Grid from "./Components/Grid";
+import "./App.css";
 
-const pokemonList = ["eevee", "pikachu", "piplup", "sprigatito", "snorlax"];
+const pokemonList = [
+	"eevee",
+	"pikachu",
+	"piplup",
+	"chikorita",
+	"snorlax",
+	"psyduck",
+	"torchic",
+	"charmander",
+	"jigglypuff",
+	"pichu",
+	"squirtle",
+	"mew",
+	"bulbasaur",
+	"teddiursa",
+	"riolu",
+	"cyndaquil",
+];
 
 function App() {
 	const [cards, setCards] = useState([]);
@@ -21,6 +40,9 @@ function App() {
 							name: data.name,
 							id: data.id,
 							sprite: data.sprites.front_default,
+							animation:
+								data.sprites.versions["generation-v"]["black-white"].animated
+									.front_default,
 						};
 					}),
 				);
@@ -35,10 +57,7 @@ function App() {
 
 	return (
 		<main>
-			<h1>Memory Card</h1>
-			{cards.map((card) => {
-				return <img src={card.sprite} alt="" key={card.id} />;
-			})}
+			<Grid cards={cards} />
 		</main>
 	);
 }
